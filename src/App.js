@@ -74,8 +74,7 @@ const Teachers = (props) => {
   );
 }
 const HTML =  (props) => {
-  let CurrentList = null;
-  const HTMLCourses = [
+  const Courses = [
     {
       title: "How to Make a Website",
       description: "If you’ve never built a website before and you have no coding or design experience, this is the place to start. In this project, we learn how to build a modern portfolio website for desktops, tablets, and mobile devices. We start with basic HTML and CSS syntax. Next, we learn how to build custom web pages with an image gallery and contact page. Finally, we walk through how to share a website live on the web.",
@@ -114,7 +113,8 @@ const HTML =  (props) => {
     }
     ];	
     return (
-      CurrentList = Courses.map((item, index) => {
+      <ul>
+      {Courses.map((item, index) => {
                 return <li className="course media group" key={index}>
                   <img className="course-img" src = {item.img_src} />
                   <div>
@@ -123,11 +123,11 @@ const HTML =  (props) => {
                   </div>
                 </li>
                 
-              })
+              })}
+              </ul>
      );
 }
 const CSS =  (props) => {
-  let CurrentList = null;
   const Courses = [
 	{
 		title: "CSS Basics",
@@ -166,22 +166,23 @@ const CSS =  (props) => {
 		id: "css-6"
 	}
 	];
-   return (
-    CurrentList = Courses.map((item, index) => {
-							return <li className="course media group" key={index}>
-								<img className="course-img" src = {item.img_src} />
-								<div>
-									<h3>{item.title}</h3>
-									<p>{item.description}</p>
-								</div>
-							</li>
-							
-						})
+  return (
+    <ul>
+    {Courses.map((item, index) => {
+              return <li className="course media group" key={index}>
+                <img className="course-img" src = {item.img_src} />
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </div>
+              </li>
+              
+            })}
+            </ul>
    );
 }
 const JavaScript =  (props) => {
-  let CurrentList = null;
-  const JSCourses = [
+  const Courses = [
     {
       title: "JavaScript Basics",
       description: "JavaScript is a programming language that drives the web: from front-end user interface design, to backend server-side programming, you'll find JavaScript at every stage of a web site and web application. In this course, you'll learn the fundamental programming concepts and syntax of the JavaScript programming language.",
@@ -220,7 +221,8 @@ const JavaScript =  (props) => {
     }
     ];
     return (
-      CurrentList = Courses.map((item, index) => {
+      <ul>
+      {Courses.map((item, index) => {
                 return <li className="course media group" key={index}>
                   <img className="course-img" src = {item.img_src} />
                   <div>
@@ -229,20 +231,22 @@ const JavaScript =  (props) => {
                   </div>
                 </li>
                 
-              })
+              })}
+              </ul>
      );
 }
 
 const Courses = () => {
    return (
-      <div>
+      <div className="main-content courses">
+        <div className="course-header group">
           <h2> Courses </h2> 
-          <ul> 
+          <ul className="course-nav"> 
              <li>  <NavLink exact to="/courses/html"> HTML </NavLink> </li>
              <li>  <NavLink to="/courses/css"> CSS </NavLink> </li>
              <li>  <NavLink to="/courses/javascript"> JavaScript </NavLink> </li>            
           </ul>
-
+        </div>
           <Switch> 
             <Route exact path= "/courses" 
                    render={()=><Redirect to="/courses/html" /> } />
@@ -263,15 +267,19 @@ const NotFoundPage = (props) => {
 
 const App = () => (
   <BrowserRouter>
-    <div>
-      <ul>
+    <div className="data-reactroot container">
+      <header>
+      <span className="icn-logo">
+						< i className="material-icons">code</i>
+			</span>
+      <ul className="main-nav">
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/about">About</NavLink></li> 
         <li><NavLink to="/teachers">Teachers</NavLink></li> 
         <li><NavLink to="/courses">Courses</NavLink></li> 
                 
       </ul>
-
+      </header>
       <hr/>
       <Switch>
          <Route exact path="/" component={Home}/>
