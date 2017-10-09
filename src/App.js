@@ -259,12 +259,6 @@ const Courses = () => {
    );   
 }
 
-const NotFoundPage = (props) => {
-   return (
-      <div> <h2> Error 404! </h2> </div>
-   );
-}
-
 const App = () => (
   <BrowserRouter>
     <div className="data-reactroot container">
