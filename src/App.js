@@ -287,7 +287,7 @@ const App = () => (
          <Route path="/teachers" component={Teachers}/> 
          <Route path="/courses" component={Courses}/> 
          
-         <Route component={NotFoundPage}/>
+         <Route component={Home}/>
       </Switch>
     </div>
   </BrowserRouter>
