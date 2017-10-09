@@ -74,6 +74,7 @@ const Teachers = (props) => {
   );
 }
 const HTML =  (props) => {
+  let CurrentList = null;
   const HTMLCourses = [
     {
       title: "How to Make a Website",
@@ -126,6 +127,7 @@ const HTML =  (props) => {
      );
 }
 const CSS =  (props) => {
+  let CurrentList = null;
   const Courses = [
 	{
 		title: "CSS Basics",
@@ -178,6 +180,7 @@ const CSS =  (props) => {
    );
 }
 const JavaScript =  (props) => {
+  let CurrentList = null;
   const JSCourses = [
     {
       title: "JavaScript Basics",
